@@ -1,0 +1,90 @@
+<HTML>
+    <title>Assignment 2</title>
+    <head>
+      <link rel="stylesheet" href ="style2.css" >
+    </head>
+   
+   <body>
+   
+   <div class="top_bar">
+    TO DO List<br>
+    <input type="text" id="inputItem" placeholder="Enter Title">
+    <input type="button" value="Add" onclick="additem()">
+   </div>
+   
+   <div class="content">
+    <ul id="UList">
+      <!-- <li onclick="strike(this)" ondblclick = "delete_li(this)">Hit the gym</li>
+      <li onclick="strike(this)" ondblclick = "delete_li(this)">Clean the wardrobe</li onclick="strike(this)">
+      <li onclick="strike(this)" ondblclick = "delete_li(this)">Go for a walk</li> -->
+    </ul>
+    <input type="button" value="submit" onclick = "submit()">
+   </div>
+   
+   </body>
+   <script>
+     var values = JSON.parse(localStorage.getItem("Siddharth"));
+    //  console.log(values);
+     if(values != null){
+      var listvalue;
+      for(var i in values){
+        console.log(i);
+        console.log(values[i][0]);
+        console.log(values[i][1]);
+       listvalue = document.createElement("li");
+       listvalue.setAttribute("onclick","strike(this)");
+       listvalue.setAttribute("ondblclick","delete_li(this)");
+       if(values[i][1] != ""){
+       listvalue.style.setProperty("text-decoration","line-through");
+       }
+       listvalue.appendChild(document.createTextNode(values[i][0]));
+       
+       document.getElementById("UList").appendChild(listvalue);
+      }
+     }
+
+   
+   function additem()
+   {
+    var1 = document.getElementById('inputItem');
+    var listvalue = document.createElement("li");
+    // listvalue.addEventListener(onclick,strike(this));
+    listvalue.setAttribute("onclick","strike(this)");
+    listvalue.setAttribute("ondblclick","delete_li(this)");
+    listvalue.appendChild(document.createTextNode(var1.value));
+    // listvalue.setAttribute("id",dynamic);
+    
+    document.getElementById("UList").appendChild(listvalue);
+   }
+
+
+   function strike(obj){
+       console.log(obj);
+        obj.style.setProperty("text-decoration", "line-through");
+   }
+   
+   function delete_li(obj){
+    console.log(obj);
+        obj.remove();
+   }  
+
+   function submit(){
+    var arr = [];
+    // var d = new Date();
+    var d = "Siddharth";
+    console.log(d);
+    var l = document.getElementsByTagName("li");
+    console.log(l);
+       for(var i =0; i< l.length; i++){
+          //  console.log(l[i].innerText);
+        arr.push([l[i].innerText,l[i].style.cssText]);
+        // arr.push(l[i].style.cssText);
+        console.log(arr[i]);
+        
+       }
+
+       localStorage.setItem(d,JSON.stringify(arr));
+   }
+   </script>
+   
+   </html>

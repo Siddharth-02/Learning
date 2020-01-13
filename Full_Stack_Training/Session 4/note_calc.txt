@@ -1,0 +1,19 @@
+calculator:
+0-9 buttons, + - / * = (Clear); a toggle button(when clicked on toggle the operators should change to currency
+- use jquery
+
+www.aztechz.com/to-do-list/api/add_task.php
+{
+"user_id":"sumit",
+"task":"this is task5",
+"status":"open"
+}
+www.aztechz.com/to-do-list/api/get_all_tasks.php
+{
+"user_id":"suhas"
+}
+www.aztechz.com/to-do-list/api/update_status.php
+{
+"id":1,
+"status":"open"
+}

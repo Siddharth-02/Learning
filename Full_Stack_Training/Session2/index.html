@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+
+        <div id="div1"></div>
+        <input id = "input1", type="text">
+        <input onclick="myAddFunc()" id = "input2" type = "button">
+        <script>
+        alert("Hello Js!");
+        document.getElementById("div1").innerHTML = "My first Div";
+        console.log(document.getElementById("div1"));
+        function myTestFunc(){
+            alert("Function Called");
+        }
+        function myAddFunc(){
+            alert("Function Called");
+            alert(document.getElementById("input1").value);
+            document.getElementById("div1").style.color = 'Blue';
+            document.getElementById("div1").style.textDecoration =  "line-through";
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery API call </title>
+    <script type="text/javascript" 
+    src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+
+<script type="text/javascript" src = "jq_calculate.js">
+
+var getTaskAPI = "http://www.aztechz.com/to-do-list/api/get_all_tasks.php";
+ $.post( getTaskAPI, '{"user_id":"suhas"}',function() {
+    alert( "Call Sent" );
+})
+.done(function(response) {
+    var untrim = JSON.stringify(response.data).trim()
+     console.log(untrim);
+     console.log(JSON.stringify(response.data));
+     alert( " success" );
+})
+.fail(function(response) {
+     alert( "Error Calling" );
+})
+.always(function(response) {
+     alert( "Call Executed and clear up memory can be started" );
+}); 
+
+</script>
+</head>
+<body>
+    <h1>Jquer api call</h1>
+</body>
+</html>
+
+

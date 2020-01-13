@@ -1,0 +1,5 @@
+select country.country, count(city.city_id) from public.country as country
+inner join public.city as city 
+on
+country.country_id = city.country_id group by country
+

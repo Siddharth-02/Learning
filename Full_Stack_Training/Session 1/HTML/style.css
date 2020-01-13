@@ -1,0 +1,12 @@
+body{
+    color: blue;
+    text-justify: initial;
+    background-color: khaki;
+    font-size: 20px;
+}
+a{
+    color: black !important;
+}
+div input{
+    color:  green;
+}
