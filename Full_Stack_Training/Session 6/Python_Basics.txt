@@ -99,3 +99,83 @@ SyntaxError: invalid syntax
 ['Insert another string ', 'ith curly brackets : the inserted string']
 >>> s.partition('e') #creates 3 parts, before e, e, and after e
 ('Ins', 'e', 'rt another string with curly brackets : the inserted string')
+
+
+Yield in python : 
+
+Functions and Generator Functions : 
+>>> def genfib(n):
+...     a = 1
+...     b = 1
+...     for i in range(n):
+...             yield a
+...             a,b = b,a+b
+...
+>>> for num in genfib(10):
+...     print(num)
+ print(genfib(20))
+<generator object genfib at 0x000001AE5AAB6308>
+>>> print(str(genfib(10)))
+<generator object genfib at 0x000001AE5AAB6308>
+del lis
+>>> lis = [ var for var in genfib(10) ]
+>>> lis
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+Generator function stored in ‘a’ and 
+ a = genfib(10)
+>>> print(next(a))
+1
+>>> print(next(a))
+1
+>>> print(next(a))
+
+
+
+
+
+# write a program to print all unique values from a dictionary in a list
+dict
+{10: 'a', 11: 'a', 12: 'b', 13: 'c'}
+>>> li_val = [var for var in dict.values()]
+>>> li_val
+['a', 'a', 'b', 'c']
+li = set(li_val)
+>>> li
+{'a', 'b', 'c'}
+
+
+Q: Write a function called hello_world that takes a number. 
+1.	If number is divisible by 3, it should return “Hello”.
+2.	divisible by 5, it should return “World”.
+3.	by both 3 and 5, it should return “Hello World”.
+4.	Otherwise, it should return the same number.
+
+
+MAP:
+>>> #map in python
+... def square(n):
+...     return n**2
+...
+>>> li_sq = list(map(square, [1,2,3,4,5]))
+>>> li_sq
+[1, 4, 9, 16, 25]
+
+
+Lambda - single line function
+lambda arguments : expression
+>>> li_sq = set(map(lambda x : x**2, [1,2,3,4,5,6,7,8,8,9,2,3,4]))
+>>> li_sq
+{64, 1, 4, 36, 9, 16, 49, 81, 25}
+
+area = list(map(lambda a,b : a*b,[2,3],[4,5]))
+>>> area
+[8, 15]
+//here [2,3] is ‘a’ and [4,5] is ‘b’
+
+
+Reduce
+>>> import functools
+>>> nos = [1,2,3,4,5,6,7,8]
+>>> functools.reduce(lambda x,y : x + y, nos)
+36
+
